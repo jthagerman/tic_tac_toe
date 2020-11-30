@@ -15,7 +15,7 @@ class Board
     def make_move(plyer_symbol, pos)
 
         if(!@game_board[pos-1].is_a? Integer || (pos < 1) || (pos > 9))
-            puts "invalid move"    
+            puts "invalid move"
         else
             @game_board[pos-1] = plyer_symbol
         end
@@ -23,7 +23,7 @@ class Board
 
     def checkwin()
 
-        #diagonals
+        #horiz
         if((@game_board[0] == @game_board[1]) && (@game_board[1] == @game_board[2])) ||
              ((@game_board[3] == @game_board[4]) && (@game_board[4] == @game_board[5])) ||
              ((@game_board[6] == @game_board[7]) && (@game_board[7] == @game_board[8]))
@@ -55,11 +55,6 @@ class Board
         end
         return over
     end
-
-    def numeric?
-        Float(self) != nil rescue false
-    end
-       
 
     def to_s
         str = ""
