@@ -54,6 +54,10 @@ class Controller
             if(move > 9) || (move < 0)
                 raise "error"
             end
+            if(@game.pos_occupied?(move))
+                puts "Spot Occupied"
+                raise "error"
+            end
         rescue => error
             puts "invalid entry"
             getMove(player)

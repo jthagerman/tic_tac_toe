@@ -21,6 +21,14 @@ class Board
         end
     end
 
+    def pos_occupied?(pos)
+        if(!@game_board[pos-1].is_a? Integer)
+            return true
+        else
+            return false
+        end
+    end
+
     def checkwin()
 
         #horiz
